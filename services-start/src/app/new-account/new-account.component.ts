@@ -23,6 +23,10 @@ export class NewAccountComponent {
     //OR
     //this.loggingService = inject(LoggingService);
 
+
+    this.accountService.statusUpdated.subscribe(
+      (status: string) => alert('Cross Component Communication\n\n Alerted by : new-account \n Got status from : accounts.service \n Sent by : account \n Status: '+ status)
+    );
   }
 
   onCreateAccount(accountName: string, accountStatus: string) {
